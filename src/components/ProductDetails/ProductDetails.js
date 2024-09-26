@@ -35,12 +35,7 @@ function ProductDetails() {
         <p className="product-description">{productDetails.description}</p>
         <p className="product-price">${productDetails.price}</p>
 
-        <button
-          className="buy-now-button"
-          onClick= {
-            handleBuyNow
-          }
-        >
+        <button className="buy-now-button" onClick={handleBuyNow}>
           buy now
         </button>
         <Link to="/">
