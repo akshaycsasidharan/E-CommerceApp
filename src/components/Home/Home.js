@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { getAllproducts } from "../../ApiService/api";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -20,15 +21,14 @@ function Home() {
         <div className="product" key={product.id}>
           <img src={product.image} alt="alternative" />
 
-          <h2>
-            {product.title}
-          </h2>
+          <h2>{product.title}</h2>
 
           <p>
             <span className="price">${product.price}</span>
           </p>
-
-          <button>Product Details</button>
+          <Link to={`/product/${product.id}`}>
+            <button>Product Details</button>
+          </Link>
         </div>
       ))}
     </div>
